@@ -1,0 +1,43 @@
+
+<form [formGroup]="Studentgroup" class="form"  >
+  <div class="flex justify-items-center">
+  <table >
+    <tr>
+      <h1 >Student {{msg}}  Form</h1>
+    </tr>
+    <tr>
+      <th> Id :</th>
+      <td>  <p-inputNumber inputId="integeronly" formControlName="_id"></p-inputNumber> </td>
+    </tr>
+    <tr>
+      <th>Student Name :</th>
+      <td><input type="text" pInputText formControlName="_sname"/></td>
+    </tr>
+    <tr>
+      <th> Gender : </th>
+      <th>
+        <p-radioButton  value="Male"  inputId="ingerdient" formControlName="_gender"></p-radioButton>
+        <label   class="ml-2">Male</label>
+        <p-radioButton  value="Fmale"  inputId="ingerdient1" formControlName="_gender"></p-radioButton>
+        <label class="ml-2">Fmale</label>
+      </th>
+    </tr>
+    <tr>
+      <th> STD : </th>
+      <th>
+        <p-inputNumber inputId="integeronly" formControlName="_std"></p-inputNumber>
+      </th>
+    </tr>
+<!--    <tr>-->
+<!--      <th> Fees :</th>-->
+<!--      <td> <p-inputNumber  mode="currency" inputId="currency-india" currency="INR" currencyDisplay="code" locale="en-IN" formControlName="_fees" > </p-inputNumber>  </td>-->
+<!--    </tr>-->
+    <tr>
+      <p-button type="submit" label="Save"  (click)="save()"  [rounded]="true"></p-button>
+      <p-button label="Clear" type="reset" [rounded]="true" severity="danger"></p-button>
+
+
+    </tr>
+  </table>
+  </div>
+</form>
