@@ -1,0 +1,33 @@
+<form [formGroup]="Couersgroup" >
+  <table>
+    <tr>
+      <th>id</th>
+      <td>  <p-inputNumber inputId="integeronly" formControlName="_crid" ></p-inputNumber> </td>
+    </tr>
+    <tr>
+      <th>Couers Name</th>
+      <td><input type="text" pInputText formControlName="_crname"/></td>
+    </tr>
+    <tr>
+      <th>Couers Description</th>
+      <td>
+        <textarea
+          rows="5"
+          cols="30"
+          pInputTextarea
+          formControlName="_crdp">
+        </textarea>
+      </td>
+    </tr>
+    <tr>
+      <th> Couers Fees :</th>
+      <td> <p-inputNumber  mode="currency" inputId="currency-india" currency="INR" currencyDisplay="code" locale="en-IN" formControlName="_crfees" > </p-inputNumber>  </td>
+    </tr>
+    <tr>
+      <td>
+        <p-button type="submit" label="Save"  (click)="savecr()"  [rounded]="true"></p-button>
+        <p-button label="Clear" type="reset" [rounded]="true" severity="danger"></p-button>
+      </td>
+    </tr>
+  </table>
+</form>

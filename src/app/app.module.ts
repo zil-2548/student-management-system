@@ -15,12 +15,19 @@ import {MessageService} from "primeng/api";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {TableModule} from "primeng/table";
 import {InputTextModule} from "primeng/inputtext";
+import { AdmissionComponent } from './admission/admission.component';
+import {ListboxModule} from "primeng/listbox";
+import { ViewAdmComponent } from './view-adm/view-adm.component';
+import { CouersEntryComponent } from './couers-entry/couers-entry.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EntryComponent,
-    ViewComponent
+    ViewComponent,
+    AdmissionComponent,
+    ViewAdmComponent,
+    CouersEntryComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +42,7 @@ import {InputTextModule} from "primeng/inputtext";
     MenubarModule,
     TableModule,
     InputTextModule,
+    ListboxModule,
   ],
   providers: [
     MessageService,

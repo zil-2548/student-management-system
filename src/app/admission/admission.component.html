@@ -1,0 +1,63 @@
+<form  >
+  <table>
+    <h1>Admission form</h1>
+    <tr>
+      <th>Select Student</th>
+      <td>
+        <div class="card flex justify-content-center">
+          <p-dropdown
+            [options]="studentservies.students"
+            [(ngModel)]="selectedStudent"
+            optionLabel="_sname"
+            [filter]="true"
+            filterBy="_sname"
+            [showClear]="true"
+            placeholder="Select a Student"
+            styleClass="w-20rem">
+            <ng-template pTemplate="filter" let-options="options">
+              <div class="flex gap-1">
+                <div class="p-inputgroup" (click)="$event.stopPropagation()">
+                  <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+                  <input
+                    type="text"
+                    pInputText
+                    placeholder="Filter"
+                    [(ngModel)]="filterValue"
+                    (keyup)="customFilterFunction($event, options)"
+                    formControlName="_selectstd"
+                  />
+                </div>
+                <button pButton icon="pi pi-times" (click)="resetFunction(options)"></button>
+              </div>
+            </ng-template>
+
+          </p-dropdown>
+        </div>
+      </td>
+
+      <th> Select Couers</th>
+      <td>
+
+        <div class="card flex justify-content-center">
+          <p-dropdown
+            [options]="couersservie.couress"
+            [(ngModel)]="selectedCours"
+            optionLabel="_crname"
+            placeholder="Select a Cours">
+
+          </p-dropdown>
+
+
+
+
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p-button type="submit" label="Save"  (click)="save()"  [rounded]="true"></p-button>
+        <p-button label="Clear" type="reset" [rounded]="true" severity="danger"></p-button>
+      </td>
+    </tr>
+  </table>
+</form>

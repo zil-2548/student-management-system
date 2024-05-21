@@ -16,6 +16,8 @@
         <th pSortableColumn="_sname">Student-Name <p-sortIcon field="_sname"></p-sortIcon></th>
         <th pSortableColumn="_gender">Gender <p-sortIcon field="_gender"></p-sortIcon></th>
         <th pSortableColumn="_std">STD <p-sortIcon field="_std"></p-sortIcon></th>
+<!--        <th pSortableColumn="_ftname">Father name <p-sortIcon field="_ftname"></p-sortIcon></th>-->
+
         <th>Action</th>
       </tr>
       <tr>
@@ -31,7 +33,10 @@
         <th>
           <p-columnFilter type="numeric" field="_std"></p-columnFilter>
         </th>
-        <th></th>
+        <th>
+<!--          <p-columnFilter type="numeric" field="_ftname"></p-columnFilter>-->
+        </th>
+
       </tr>
 
     </ng-template>
@@ -41,17 +46,19 @@
           <td>{{st._sname}}</td>
         <td>{{st._gender}}</td>
         <td>{{st._std}}</td>
+<!--        <td>{{st._ftname}}</td>-->
+
 
         <td >
           <p-button icon="pi pi-trash" [rounded]="true" severity="danger" (click)="delete(st.id)" ></p-button>
           <p-button icon="pi pi-pencil" [rounded]="true" severity="warning" (click)="updaterecord(st)" ></p-button>
         </td>
       </tr>
-      <ng-template pTemplate="emptymessage">
-        <tr>
-          <td colspan="4">No customers found.</td>
-        </tr>
-      </ng-template>
+<!--      <ng-template pTemplate="emptymessage">-->
+<!--        <tr>-->
+<!--          <td colspan="4">No customers found.</td>-->
+<!--        </tr>-->
+<!--      </ng-template>-->
     </ng-template>
   </p-table>
 </div>

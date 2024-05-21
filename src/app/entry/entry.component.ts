@@ -7,6 +7,7 @@ import {Router} from "@angular/router";
 
 
 
+
 @Component({
   selector: 'app-entry',
   templateUrl: './entry.component.html',
@@ -18,8 +19,14 @@ export class EntryComponent {
     _sname:new FormControl("",[Validators.maxLength(50)]),
     _gender:new FormControl(""),
     _std:new FormControl('' ),
+    _mdname:new FormControl('' ),
+    _ltname:new FormControl('' ),
+    _ftname:new FormControl('' ),
+    _ftmdname:new FormControl('' ),
+    _ftltname:new FormControl('' ),
+    _ftegucation:new FormControl(''),
 
-    _fees:new FormControl("",[Validators.min(0) ])
+
   })
   ingredient!: string;
   msg:string='new';
@@ -35,13 +42,29 @@ export class EntryComponent {
   save(){
 
     let allstudent=this.Studentgroup.value
-    console.log(this.Studentgroup.value);
+    console.log(allstudent);
     let student:// @ts-ignore
-      Student=new Student(parseInt(allstudent._id),allstudent._sname,allstudent._gender,parseInt(allstudent._std),0)
-
+      Student=new Student(parseInt(allstudent._id),allstudent._sname,allstudent._gender, parseInt(allstudent._std),allstudent._ftltname,allstudent._ftegucation,allstudent._ftmdname,allstudent._ftname,allstudent._ltname,allstudent._mdname)
+    //   const local= localStorage.getItem('studentdata');
+    // const localdata = localStorage.getItem('studentdata');
+    // const studentlist=[];
     if (this.studentservies.formmode=="new"){
 
-    this.studentservies.setstudent(student);
+      // if (localdata != null){
+      //   const olddata= JSON.parse(localdata);
+      //     // olddata.push(this.studentservies.setstudent(student));
+      //   olddata.push(this.Studentgroup.value);
+      //   localStorage.setItem('Studentalldata',JSON.stringify(olddata));
+      //
+      // }else {
+      //   const newdata=[];
+      //   // newdata.push(this.studentservies.setstudent(student));
+      //   newdata.push(this.Studentgroup.value);
+      //   localStorage.setItem('Studentalldata',JSON.stringify(newdata));
+      // }
+
+      this.studentservies.setstudent(student);
+
 
     this.messageService.clear();
     this.messageService.add({ key: 'toast1', severity: 'success', summary: 'Success', detail: `Student ${this.Studentgroup.value._sname} Record is successfully added.` });
@@ -59,5 +82,9 @@ export class EntryComponent {
       this.messageService.add({ key: 'toast1', severity: 'success', summary: 'Success', detail: `Record is Successfuly updated.` });
       this.router.navigate(["view"])
     }
+  }
+
+  private ngOnInit() {
+
   }
 }

@@ -33,17 +33,40 @@ export class AppComponent {
 
         ]
       },
-      {label:'Admisone',
+      {
+        label: 'Couers ',
         icon: 'pi pi-fw pi-file',
-        items:[
+
+        items: [
           {
-            label: 'Add New Student',
+            label: 'Add New Couers',
             icon: 'pi pi-fw pi-plus',
+            routerLink:"addcr"
 
           },
           {
-            label: 'Add New Student',
+            label: 'View Student',
+            icon: 'pi pi-fw pi-eye',
+
+          },
+
+        ]
+      },
+      {
+        label:'Admission',
+        icon: 'pi pi-fw pi-file',
+
+        items:[
+          {
+            label: 'Add admission',
             icon: 'pi pi-fw pi-plus',
+            routerLink:"adm"
+
+          },
+          {
+            label: 'View Admission',
+            icon: 'pi pi-fw pi-eye',
+            routerLink:"viewAdm"
           }
         ]
       }
