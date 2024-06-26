@@ -1,4 +1,4 @@
-<form  >
+<form [formGroup]="admissiongrop"  >
   <table>
     <h1>Admission form</h1>
     <tr>
@@ -6,14 +6,16 @@
       <td>
         <div class="card flex justify-content-center">
           <p-dropdown
-            [options]="studentservies.students"
+            [options]="studentnames"
             [(ngModel)]="selectedStudent"
             optionLabel="_sname"
             [filter]="true"
             filterBy="_sname"
             [showClear]="true"
             placeholder="Select a Student"
-            styleClass="w-20rem">
+            styleClass="w-20rem"
+            formControlName="_admst"
+          >
             <ng-template pTemplate="filter" let-options="options">
               <div class="flex gap-1">
                 <div class="p-inputgroup" (click)="$event.stopPropagation()">
@@ -24,7 +26,7 @@
                     placeholder="Filter"
                     [(ngModel)]="filterValue"
                     (keyup)="customFilterFunction($event, options)"
-                    formControlName="_selectstd"
+
                   />
                 </div>
                 <button pButton icon="pi pi-times" (click)="resetFunction(options)"></button>
@@ -40,10 +42,12 @@
 
         <div class="card flex justify-content-center">
           <p-dropdown
-            [options]="couersservie.couress"
+            [options]="couersnames"
             [(ngModel)]="selectedCours"
             optionLabel="_crname"
-            placeholder="Select a Cours">
+            placeholder="Select a Cours"
+            formControlName="_admcr"
+          >
 
           </p-dropdown>
 

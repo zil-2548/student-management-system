@@ -19,3 +19,10 @@
   overflow: hidden;
   /*background: blue;*/
 }
+.formdiv{
+  height: 80%;
+  width: 100%;
+}
+.p-inputtext{
+  width:80%;
+}

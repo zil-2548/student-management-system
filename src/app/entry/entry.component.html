@@ -1,70 +1,75 @@
+<div class=" h-full w-full">
+<form [formGroup]="Studentgroup" class="form mt-3"  >
 
-<form [formGroup]="Studentgroup" class="form "  >
+  <div class="bg-blue-400  border-2 formdiv">
+    <table class="flex flex-column justify-content-evenly align-items-center overflow-auto h-[80%] w-[90%] ">
+      <tr>
+        <h1 >Student {{msg}}  Form</h1>
+      </tr>
 
-  <table class="flex flex-column justify-content-evenly align-items-center overflow-auto h-[80%] w-[90%] ">
-    <tr>
-      <h1 >Student {{msg}}  Form</h1>
-    </tr>
+      <div class=" w-full flex justify-content-between gap-1  ">
+        <tr >
+          <th>ID</th>
+          <td>  <p-inputNumber inputId="integeronly" formControlName="_id" ></p-inputNumber> </td>
+        </tr>
 
-  <div class="flex justify-content-center ">
-    <tr >
-      <th>ID</th>
-      <td>  <p-inputNumber inputId="integeronly" formControlName="_id" ></p-inputNumber> </td>
-    </tr>
+        <tr>
+          <th>St First Name :</th>
+          <td><input type="text" pInputText formControlName="_sname"/></td>
+        </tr>
+        <tr>
+          <th>St Mideal Name :</th>
+          <td><input type="text" pInputText formControlName="_mdname"/></td>
+        </tr>
+      </div>
+
+      <div class=" w-full flex justify-content-between  justify-between ">
+        <tr>
+          <th>St Last Name :</th>
+          <td><input type="text" pInputText formControlName="_ltname"/></td>
+        </tr>
+
+        <tr>
+          <th> Father Name :</th>
+          <td><input type="text" pInputText formControlName="_ftname"/></td>
+        </tr>
+        <tr>
+          <th>Father Mideal Name :</th>
+          <td><input type="text" pInputText formControlName="_ftmdname"/></td>
+        </tr>
+      </div>
+      <div class=" w-full flex justify-content-between  justify-between ">
+        <tr>
+          <th>Father Last Name :</th>
+          <td><input type="text" pInputText formControlName="_ftltname"/></td>
+        </tr>
+
+        <tr>
+          <th> Gender : </th>
+          <th class="gap-10">
+            <p-radioButton  value="Male"  inputId="ingerdient" formControlName="_gender" ></p-radioButton>
+            <label   class="ml-2">Male</label>
+            <p-radioButton  value="Fmale"  inputId="ingerdient1" formControlName="_gender"></p-radioButton>
+            <label class="ml-2">Fmale</label>
+          </th>
+        </tr>
+        <tr>
+          <th> STD : </th>
+          <td>
+            <p-inputNumber inputId="integeronly" formControlName="_std"></p-inputNumber>
+          </td>
+        </tr>
+      </div>
 
       <tr>
-        <th>Student First Name :</th>
-        <td><input type="text" pInputText formControlName="_sname"/></td>
+        <p-button type="submit" label="Save"  (click)="save()"  [rounded]="true"></p-button>
+        <p-button label="Clear" type="reset" [rounded]="true" severity="danger"></p-button>
+
+
       </tr>
-      <tr>
-        <th>Student Mideal Name :</th>
-        <td><input type="text" pInputText formControlName="_mdname"/></td>
-      </tr>
+    </table>
   </div>
-    <div class="flex justify-content-center">
-      <tr>
-        <th>Student Last Name :</th>
-        <td><input type="text" pInputText formControlName="_ltname"/></td>
-      </tr>
 
-    <tr>
-      <th> Father Name :</th>
-      <td><input type="text" pInputText formControlName="_ftname"/></td>
-    </tr>
-    <tr>
-      <th>Father Mideal Name :</th>
-      <td><input type="text" pInputText formControlName="_ftmdname"/></td>
-    </tr>
-    </div>
-    <div class="flex justify-content-center">
-    <tr>
-      <th>Father Last Name :</th>
-      <td><input type="text" pInputText formControlName="_ftltname"/></td>
-    </tr>
-
-    <tr>
-      <th> Gender : </th>
-      <th class="gap-10">
-        <p-radioButton  value="Male"  inputId="ingerdient" formControlName="_gender" ></p-radioButton>
-        <label   class="ml-2">Male</label>
-        <p-radioButton  value="Fmale"  inputId="ingerdient1" formControlName="_gender"></p-radioButton>
-        <label class="ml-2">Fmale</label>
-      </th>
-    </tr>
-    <tr>
-      <th> STD : </th>
-      <td>
-        <p-inputNumber inputId="integeronly" formControlName="_std"></p-inputNumber>
-      </td>
-    </tr>
-    </div>
-
-    <tr>
-      <p-button type="submit" label="Save"  (click)="save()"  [rounded]="true"></p-button>
-      <p-button label="Clear" type="reset" [rounded]="true" severity="danger"></p-button>
-
-
-    </tr>
-  </table>
 
 </form>
+</div>

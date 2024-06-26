@@ -5,6 +5,9 @@ import {StudentService} from "../../servies/student.service";
 import {FormControl, FormGroup} from "@angular/forms";
 import {MessageService} from "primeng/api";
 import {CouresService} from "../../servies/coures.service";
+import {AdmissionService} from "../../servies/admission.service";
+import {Adm} from "../../model/adm";
+import {data} from "autoprefixer";
 
 
 
@@ -23,11 +26,21 @@ class City {
 })
 export class AdmissionComponent {
 
+  studentnames:Array<string> = [];
+  couersnames:Array<string> = [];
+
+  admissiongrop = new FormGroup({
+    _admst: new FormControl(null),
+    _admcr: new FormControl(null),
+  })
 
 
 
+  constructor(public studentservies:StudentService,public couersservie:CouresService,public admissionservies:AdmissionService,public messageService:MessageService) {
 
-  constructor(public studentservies:StudentService,public couersservie:CouresService ) {
+    this.admissionservies.showstname().subscribe(data=> this.studentnames=data);
+    this.admissionservies.showcouer().subscribe(data=> this.couersnames=data);
+
   }
 
 
@@ -63,10 +76,15 @@ export class AdmissionComponent {
     // @ts-ignore
     options.filter(event);
   }
-  save(){
-  let admdata = (this.couersservie.couress,this.studentservies.students);
-    console.log(admdata);
-
+  save() {
+    let alladm = this.admissiongrop.value;
+    // @ts-ignore
+    let admission :Adm=new Adm(alladm._admst,alladm._admcr)
+    this.admissionservies.setdbadm(admission).subscribe(data=>{
+    });
+    this.messageService.clear();
+    this.messageService.add({ key: 'toast1', severity: 'success', summary: 'Success', detail: `Student ${this.admissiongrop.value._admst} And Couers ${this.admissiongrop.value._admcr}.` });
+    this.admissiongrop.reset();
   }
 
 

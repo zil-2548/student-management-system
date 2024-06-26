@@ -6,13 +6,15 @@ import {ViewComponent} from "./view/view.component";
 import {AdmissionComponent} from "./admission/admission.component";
 import {ViewAdmComponent} from "./view-adm/view-adm.component";
 import {CouersEntryComponent} from "./couers-entry/couers-entry.component";
+import {CouersViewComponent} from "./couers-view/couers-view.component";
 // import {CouersEntryComponent} from "./couers-entry/couers-entry.component";
 
 const routes: Routes = [
 
   {path:"add",component:EntryComponent},
   {path:'view',component:ViewComponent},
-  {path:'addcr',component:CouersEntryComponent},
+  {path:'AddCouers',component:CouersEntryComponent},
+  {path:'ViewCouers',component:CouersViewComponent},
   {path:'adm',component:AdmissionComponent},
   {path:'viewAdm',component:ViewAdmComponent},
 ];

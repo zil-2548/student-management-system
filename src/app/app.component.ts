@@ -16,7 +16,7 @@ export class AppComponent {
     this.items = [
       {
         label: 'Student ',
-        icon: 'pi pi-fw pi-file',
+        icon: 'pi pi-fw pi-users',
 
         items: [
           {
@@ -28,7 +28,8 @@ export class AppComponent {
           {
             label: 'View Student',
             icon: 'pi pi-fw pi-eye',
-            routerLink:"view"
+            routerLink:"view",
+
           },
 
         ]
@@ -41,12 +42,13 @@ export class AppComponent {
           {
             label: 'Add New Couers',
             icon: 'pi pi-fw pi-plus',
-            routerLink:"addcr"
+            routerLink:"AddCouers"
 
           },
           {
             label: 'View Student',
             icon: 'pi pi-fw pi-eye',
+            routerLink: "ViewCouers"
 
           },
 

@@ -19,6 +19,8 @@ import { AdmissionComponent } from './admission/admission.component';
 import {ListboxModule} from "primeng/listbox";
 import { ViewAdmComponent } from './view-adm/view-adm.component';
 import { CouersEntryComponent } from './couers-entry/couers-entry.component';
+import {HttpClientModule} from "@angular/common/http";
+import { CouersViewComponent } from './couers-view/couers-view.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { CouersEntryComponent } from './couers-entry/couers-entry.component';
     ViewComponent,
     AdmissionComponent,
     ViewAdmComponent,
-    CouersEntryComponent
+    CouersEntryComponent,
+    CouersViewComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -43,6 +47,7 @@ import { CouersEntryComponent } from './couers-entry/couers-entry.component';
     TableModule,
     InputTextModule,
     ListboxModule,
+    HttpClientModule
   ],
   providers: [
     MessageService,

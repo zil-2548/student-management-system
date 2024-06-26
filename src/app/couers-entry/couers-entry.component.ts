@@ -32,6 +32,9 @@ export class CouersEntryComponent {
     let couers: Coures=new Coures(parseInt(allcouersdata._crid),allcouersdata._crname,allcouersdata._crdp,parseInt(allcouersdata._crfees));
 
     this.CouersService.setcouress(couers);
+    this.CouersService.dbcouer(couers).subscribe(data=>{
+      console.log(data);
+    })
 
     this.messageService.clear();
     this.messageService.add({ key: 'toast1', severity: 'success', summary: 'Success', detail: `${this.Couersgroup.value._crname} Coures is successfully added.` });

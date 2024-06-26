@@ -44,24 +44,13 @@ export class EntryComponent {
     let allstudent=this.Studentgroup.value
     console.log(allstudent);
     let student:// @ts-ignore
-      Student=new Student(parseInt(allstudent._id),allstudent._sname,allstudent._gender, parseInt(allstudent._std),allstudent._ftltname,allstudent._ftegucation,allstudent._ftmdname,allstudent._ftname,allstudent._ltname,allstudent._mdname)
-    //   const local= localStorage.getItem('studentdata');
-    // const localdata = localStorage.getItem('studentdata');
-    // const studentlist=[];
+      Student=new Student(parseInt(allstudent._id),allstudent._sname,allstudent._gender, parseInt(allstudent._std),allstudent._ftltname,allstudent._ftegucation,allstudent._ftmdname,allstudent._ftname,allstudent._ltname,allstudent._mdname);
+    this.studentservies.setDbstudent(student).subscribe(data=>{
+      console.log(data);
+    })
+
     if (this.studentservies.formmode=="new"){
 
-      // if (localdata != null){
-      //   const olddata= JSON.parse(localdata);
-      //     // olddata.push(this.studentservies.setstudent(student));
-      //   olddata.push(this.Studentgroup.value);
-      //   localStorage.setItem('Studentalldata',JSON.stringify(olddata));
-      //
-      // }else {
-      //   const newdata=[];
-      //   // newdata.push(this.studentservies.setstudent(student));
-      //   newdata.push(this.Studentgroup.value);
-      //   localStorage.setItem('Studentalldata',JSON.stringify(newdata));
-      // }
 
       this.studentservies.setstudent(student);
 
@@ -73,8 +62,12 @@ export class EntryComponent {
   }
     else {
       // @ts-ignore
-      let  index=this.studentservies.getstudent().findIndex(data => data.id==parseInt(this.Studentgroup.value._id))
-      this.studentservies.getstudent()[index]=student;
+      // let  index=this.studentservies.getstudent().findIndex(data => data.id==parseInt(this.Studentgroup.value._id))
+      // this.studentservies.getstudent()[index]=student;
+      // @ts-ignore
+      this.studentservies.showstudent(allstudent._id).subscribe(data=>{
+        console.log(data)
+      })
       this.studentservies.formmode="new";
       this.msg="new";
       this.Studentgroup.reset();
