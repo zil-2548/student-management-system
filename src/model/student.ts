@@ -1,19 +1,13 @@
 export class Student {
-  private _id:number=0;
-  private _sname: string='';
-  private _gender:string='';
-  private _mdname:string='';
-  private _ltname:string='';
-  private _ftname:string='';
-  private _ftmdname:string='';
-  private _ftltname:string='';
-  private _ftegucation:string='';
-  private _std:number=0;
-
-
-  get std(): number {
-    return this._std;
-  }
+  private _id: number=0;
+  private _studentname: string="";
+  // private _student_midel_name: string="";
+  private _student_last_name: string="";
+  private _student_father_name: string="";
+  private _student_father_egucation: string="";
+  private _student_father_phonenumber: number=0;
+  private _studentgender: string="";
+  private _studentstd: number=0;
 
   get id(): number {
     return this._id;
@@ -23,76 +17,79 @@ export class Student {
     this._id = value;
   }
 
-  get sname(): string {
-    return this._sname;
+  get studentname(): string {
+    return this._studentname;
   }
 
-  set sname(value: string) {
-    this._sname = value;
+  set studentname(value: string) {
+    this._studentname = value;
   }
 
-  get gender(): string {
-    return this._gender;
+  // get student_midel_name(): string {
+  //   return this._student_midel_name;
+  // }
+  //
+  // set student_midel_name(value: string) {
+  //   this._student_midel_name = value;
+  // }
+
+  get student_last_name(): string {
+    return this._student_last_name;
   }
 
-  set gender(value: string) {
-    this._gender = value;
+  set student_last_name(value: string) {
+    this._student_last_name = value;
   }
 
-  get mdname(): string {
-    return this._mdname;
+  get student_father_name(): string {
+    return this._student_father_name;
   }
 
-  set mdname(value: string) {
-    this._mdname = value;
+  set student_father_name(value: string) {
+    this._student_father_name = value;
   }
 
-  get ltname(): string {
-    return this._ltname;
+  get student_father_egucation(): string {
+    return this._student_father_egucation;
   }
 
-  set ltname(value: string) {
-    this._ltname = value;
+  set student_father_egucation(value: string) {
+    this._student_father_egucation = value;
   }
 
-  get ftname(): string {
-    return this._ftname;
+  get student_father_phonenumber(): number {
+    return this._student_father_phonenumber;
   }
 
-  set ftname(value: string) {
-    this._ftname = value;
+  set student_father_phonenumber(value: number) {
+    this._student_father_phonenumber = value;
   }
 
-  get ftmdname(): string {
-    return this._ftmdname;
+  get studentgender(): string {
+    return this._studentgender;
   }
 
-  set ftmdname(value: string) {
-    this._ftmdname = value;
+  set studentgender(value: string) {
+    this._studentgender = value;
   }
 
-  get ftltname(): string {
-    return this._ftltname;
+  get studentstd(): number {
+    return this._studentstd;
   }
 
-  set ftltname(value: string) {
-    this._ftltname = value;
+  set studentstd(value: number) {
+    this._studentstd = value;
   }
 
-  get ftegucation(): string {
-    return this._ftegucation;
-  }
-
-  set ftegucation(value: string) {
-    this._ftegucation = value;
-  }
-
-
-  constructor(id: number, sname: string, gender: string, ftname: string, std: number) {
+constructor(id:number,studentname:string,student_last_name:string,student_father_name:string,student_father_egucation:string,student_father_phonenumber:number,studentgender:string,studentstd:number) {
     this._id = id;
-    this._sname = sname;
-    this._gender = gender;
-    this._ftname = ftname;
-    this._std = std;
-  }
+    this._studentname=studentname;
+    // this._student_midel_name=student_midel_name;
+    this._student_last_name=student_last_name;
+    this._student_father_name=student_father_name;
+    this._student_father_egucation=student_father_egucation;
+    this._student_father_phonenumber=student_father_phonenumber;
+    this._studentgender=studentgender;
+    this._studentstd=studentstd;
+}
 }

@@ -2,7 +2,7 @@
 
 <div class="card">
   <p-table #dt1 [value]="this.studentservies.students" [tableStyle]="{ 'min-width': '50rem' }"
-           [globalFilterFields]="['_id','_sname','_gender','_std']"
+           [globalFilterFields]="['_id','_studentname','_studentgender','_studentstd']"
            [rows]="3"
            [showCurrentPageReport]="true"
            [rowsPerPageOptions]="[10, 25, 50]"
@@ -13,10 +13,10 @@
     <ng-template pTemplate="header">
       <tr>
         <th pSortableColumn="_id">ID <p-sortIcon field="_id"></p-sortIcon></th>
-        <th pSortableColumn="_sname">Student-Name <p-sortIcon field="_sname"></p-sortIcon></th>
-        <th pSortableColumn="_gender">Gender <p-sortIcon field="_gender"></p-sortIcon></th>
-        <th pSortableColumn="_std">STD <p-sortIcon field="_std"></p-sortIcon></th>
-<!--        <th pSortableColumn="_ftname">Father name <p-sortIcon field="_ftname"></p-sortIcon></th>-->
+        <th pSortableColumn="_studentname">Student-Name <p-sortIcon field="_studentname"></p-sortIcon></th>
+        <th pSortableColumn="_studentgender">Gender <p-sortIcon field="_studentgender"></p-sortIcon></th>
+        <th pSortableColumn="_studentstd">STD <p-sortIcon field="_studentstd"></p-sortIcon></th>
+
 
         <th>Action</th>
       </tr>
@@ -25,17 +25,15 @@
           <p-columnFilter type="numeric" field="_id"></p-columnFilter>
         </th>
         <th>
-          <p-columnFilter type="text" field="_sname"></p-columnFilter>
+          <p-columnFilter type="text" field="_studentname"></p-columnFilter>
         </th>
         <th>
-          <p-columnFilter type="text" field="_gender"></p-columnFilter>
+          <p-columnFilter type="text" field="_studentgender"></p-columnFilter>
         </th>
         <th>
-          <p-columnFilter type="numeric" field="_std"></p-columnFilter>
+          <p-columnFilter type="numeric" field="_studentstd"></p-columnFilter>
         </th>
-        <th>
-<!--          <p-columnFilter type="numeric" field="_ftname"></p-columnFilter>-->
-        </th>
+
 
       </tr>
 
@@ -43,22 +41,18 @@
     <ng-template pTemplate="body" let-st>
       <tr>
           <td>{{st._id}}</td>
-          <td>{{st._sname}}</td>
-        <td>{{st._gender}}</td>
-        <td>{{st._std}}</td>
-<!--        <td>{{st._ftname}}</td>-->
+          <td>{{st._studentname}}</td>
+        <td>{{st._studentgender}}</td>
+        <td>{{st._studentstd}}</td>
+
 
 
         <td class="flex justify-content-center gap-2">
-          <p-button icon="pi pi-trash" [rounded]="true" severity="danger" (click)="delete(st.id)" ></p-button>
+          <p-button icon="pi pi-trash" [rounded]="true" severity="danger" (click)="delete(st)" ></p-button>
           <p-button icon="pi pi-pencil" [rounded]="true" severity="warning" (click)="updaterecord(st)" ></p-button>
         </td>
       </tr>
-<!--      <ng-template pTemplate="emptymessage">-->
-<!--        <tr>-->
-<!--          <td colspan="4">No customers found.</td>-->
-<!--        </tr>-->
-<!--      </ng-template>-->
+
     </ng-template>
   </p-table>
 </div>

@@ -1,1 +1,58 @@
-<p>view-adm works!</p>
+
+
+<div class="card">
+  <p-table #dt1 [value]="this.admissionservies.adm"    [tableStyle]="{ 'min-width': '50rem' }"
+           [globalFilterFields]="['_admst','_admcr',]"
+           [rows]="3"
+           [showCurrentPageReport]="true"
+           [rowsPerPageOptions]="[10, 25, 50]"
+           [paginator]="true"
+           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  >
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="_admst">Student_Name<p-sortIcon field="_admst"></p-sortIcon></th>
+        <th pSortableColumn="_admcr">Couers_Name <p-sortIcon field="_admcr"></p-sortIcon></th>
+<!--        <th pSortableColumn="_crdp">Couers Description <p-sortIcon field="_gender"></p-sortIcon></th>-->
+<!--        <th pSortableColumn="_crfees">Fees <p-sortIcon field="_std"></p-sortIcon></th>-->
+        <!--        <th pSortableColumn="_ftname">Father name <p-sortIcon field="_ftname"></p-sortIcon></th>-->
+
+        <th>Action</th>
+      </tr>
+      <tr>
+        <th>
+          <p-columnFilter type="numeric" field="_admst"></p-columnFilter>
+        </th>
+        <th>
+          <p-columnFilter type="text" field="_admcr"></p-columnFilter>
+        </th>
+<!--        <th>-->
+<!--          <p-columnFilter type="text" field="_crdp"></p-columnFilter>-->
+<!--        </th>-->
+<!--        <th>-->
+<!--          <p-columnFilter type="numeric" field="_crfees"></p-columnFilter>-->
+<!--        </th>-->
+
+
+      </tr>
+
+    </ng-template>
+    <ng-template pTemplate="body" let-st>
+      <tr>
+        <td>{{st._admst}}</td>
+        <td>{{st._admcr}}</td>
+<!--        <td>{{st._crdp}}</td>-->
+<!--        <td>{{st._crfees}}</td>-->
+        <!--        <td>{{st._ftname}}</td>-->
+
+
+        <td class="flex justify-content-center gap-2">
+          <p-button icon="pi pi-trash" [rounded]="true" severity="danger"   ></p-button>
+          <p-button icon="pi pi-pencil" [rounded]="true" severity="success" ></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+

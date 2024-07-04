@@ -25,7 +25,9 @@ export class ViewComponent {
   }
 
   delete(id:any){
-    const index = this.studentservies.getstudent().findIndex(obj => obj.id === id)
+
+    console.log("delete record : " ,id);
+    //const index = this.studentservies.getstudent().findIndex(obj => obj._id === id)
     // if (index > -1) {
     // //  this.studentservies.getstudent().splice(index, 1);
     //
@@ -38,7 +40,7 @@ export class ViewComponent {
     //
     //
     // }
-    this.studentservies.deletestudent(this.studentservies.students[index]).subscribe(data=>{
+    this.studentservies.deletestudent(id).subscribe(data=>{
       console.log("delete :",data);
 
       this.messageService.clear();

@@ -18,6 +18,7 @@ export class StudentService {
 
 
 
+
   setstudent(student:Student){
     this.students.push(student);
 
@@ -32,8 +33,11 @@ export class StudentService {
     return this.http.post<Student>("http://localhost:3000/users",JSON.parse(JSON.stringify(student)))
   }
   deletestudent(student:Student):Observable<Student>{
+    console.log("deletestudent :",student);
     // @ts-ignore
-    return  this.http.delete<Student>("http://localhost:3000/users",JSON.parse(JSON.stringify(student)))
+   return  this.http.delete<Student>("http://localhost:3000/users",JSON.parse(JSON.stringify(student)))
+  //  return  this.http.delete<Student>("http://localhost:3000/users");
+
   }
   updatestudent(student:Student):Observable<Student>{
     // @ts-ignore

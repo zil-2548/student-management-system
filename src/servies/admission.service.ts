@@ -23,4 +23,7 @@ showstname():Observable<any []>{
 showcouer():Observable<any []>{
     return this.http.get<any []>("http://localhost:3000/couers/name")
 }
+showadm():Observable<Adm []>{
+    return this.http.get<Adm []>("http://localhost:3000/ADM")
+}
 }

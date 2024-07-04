@@ -16,18 +16,16 @@ import {Router} from "@angular/router";
 export class EntryComponent {
   Studentgroup=new FormGroup({
     _id:new FormControl(""),
-    _sname:new FormControl("",[Validators.maxLength(50)]),
-    _gender:new FormControl(""),
-    _std:new FormControl('' ),
-    _mdname:new FormControl('' ),
-    _ltname:new FormControl('' ),
-    _ftname:new FormControl('' ),
-    _ftmdname:new FormControl('' ),
-    _ftltname:new FormControl('' ),
-    _ftegucation:new FormControl(''),
-
+    _studentname: new FormControl(""),
+    _student_father_name:new FormControl(""),
+    _student_last_name: new FormControl(""),
+    _student_father_egucation:new FormControl(""),
+    _student_father_phonenumber:new FormControl(""),
+    _studentgender:new FormControl(""),
+    _studentstd:new FormControl(""),
 
   })
+
   ingredient!: string;
   msg:string='new';
 
@@ -44,10 +42,11 @@ export class EntryComponent {
     let allstudent=this.Studentgroup.value
     console.log(allstudent);
     let student:// @ts-ignore
-      Student=new Student(parseInt(allstudent._id),allstudent._sname,allstudent._gender, parseInt(allstudent._std),allstudent._ftltname,allstudent._ftegucation,allstudent._ftmdname,allstudent._ftname,allstudent._ltname,allstudent._mdname);
+      Student=new Student(parseInt(allstudent._id),allstudent._studentname,allstudent._student_last_name,allstudent._student_father_name,allstudent._student_father_egucation,parseInt(allstudent._student_father_phonenumber),allstudent._studentgender,parseInt(allstudent._studentstd),);
     this.studentservies.setDbstudent(student).subscribe(data=>{
       console.log(data);
-    })
+
+    });
 
     if (this.studentservies.formmode=="new"){
 
@@ -56,7 +55,7 @@ export class EntryComponent {
 
 
     this.messageService.clear();
-    this.messageService.add({ key: 'toast1', severity: 'success', summary: 'Success', detail: `Student ${this.Studentgroup.value._sname} Record is successfully added.` });
+    this.messageService.add({ key: 'toast1', severity: 'success', summary: 'Success', detail: `Student ${this.Studentgroup.value._studentname} Record is successfully added.` });
     this.Studentgroup.reset();
 
   }

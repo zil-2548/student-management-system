@@ -14,54 +14,51 @@
         </tr>
 
         <tr>
-          <th>St First Name :</th>
-          <td><input type="text" pInputText formControlName="_sname"/></td>
+          <th>Student First Name :</th>
+          <td><input type="text" pInputText formControlName="_studentname"/></td>
         </tr>
         <tr>
-          <th>St Mideal Name :</th>
-          <td><input type="text" pInputText formControlName="_mdname"/></td>
+          <th>Student Father Name :</th>
+            <td><input type="text" pInputText formControlName="_student_father_name"/></td>
         </tr>
       </div>
 
       <div class=" w-full flex justify-content-between  justify-between ">
         <tr>
-          <th>St Last Name :</th>
-          <td><input type="text" pInputText formControlName="_ltname"/></td>
+          <th>Student Last Name :</th>
+          <td><input type="text" pInputText formControlName="_student_last_name"/></td>
+        </tr>
+        <tr>
+          <th>Father Egucation :</th>
+          <td><input type="text" pInputText formControlName="_student_father_egucation"/></td>
+        </tr>
+        <tr>
+          <th>Father PhoneNumber :</th>
+          <td><input type="text" pInputText formControlName="_student_father_phonenumber"/></td>
         </tr>
 
-        <tr>
-          <th> Father Name :</th>
-          <td><input type="text" pInputText formControlName="_ftname"/></td>
-        </tr>
-        <tr>
-          <th>Father Mideal Name :</th>
-          <td><input type="text" pInputText formControlName="_ftmdname"/></td>
-        </tr>
       </div>
       <div class=" w-full flex justify-content-between  justify-between ">
-        <tr>
-          <th>Father Last Name :</th>
-          <td><input type="text" pInputText formControlName="_ftltname"/></td>
-        </tr>
+
 
         <tr>
           <th> Gender : </th>
           <th class="gap-10">
-            <p-radioButton  value="Male"  inputId="ingerdient" formControlName="_gender" ></p-radioButton>
+            <p-radioButton  value="Male"  inputId="ingerdient" formControlName="_studentgender" ></p-radioButton>
             <label   class="ml-2">Male</label>
-            <p-radioButton  value="Fmale"  inputId="ingerdient1" formControlName="_gender"></p-radioButton>
+            <p-radioButton  value="Fmale"  inputId="ingerdient1" formControlName="_studentgender"></p-radioButton>
             <label class="ml-2">Fmale</label>
           </th>
         </tr>
         <tr>
           <th> STD : </th>
           <td>
-            <p-inputNumber inputId="integeronly" formControlName="_std"></p-inputNumber>
+            <p-inputNumber inputId="integeronly" formControlName="_studentstd"></p-inputNumber>
           </td>
         </tr>
       </div>
 
-      <tr>
+      <tr class="gap-2">
         <p-button type="submit" label="Save"  (click)="save()"  [rounded]="true"></p-button>
         <p-button label="Clear" type="reset" [rounded]="true" severity="danger"></p-button>
 
